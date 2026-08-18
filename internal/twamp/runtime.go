@@ -79,7 +79,9 @@ type SessionBag struct {
 }
 
 func NewSessionBag() *SessionBag {
-	return &SessionBag{}
+	bag := &SessionBag{}
+	bag.pads = make(map[string]int)
+	return bag
 }
 
 func (b *SessionBag) SetPad(name string, pad int) {
